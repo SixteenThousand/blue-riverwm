@@ -1,6 +1,6 @@
 #!/bin/lua
 
-local direction = ...
+local direction,window = ...
 
 local curr_ws_file = io.open(os.getenv("CURRENT_WS_FILE"),"r")
 local curr_ws = tonumber(curr_ws_file:read())
@@ -21,4 +21,8 @@ new_ws = new_ws % 9
 curr_ws_file = io.open(os.getenv("CURRENT_WS_FILE"),"w")
 curr_ws_file:write(tostring(new_ws))
 curr_ws_file:close()
-os.execute("riverctl set-focused-tags "..tostring(1 << new_ws))
+local new_tags = 1 << new_ws
+if window then
+    os.execute("riverctl set-view-tags "..tostring(new_tags))
+end
+os.execute("riverctl set-focused-tags "..tostring(new_tags))
