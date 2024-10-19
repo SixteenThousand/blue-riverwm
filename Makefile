@@ -4,6 +4,6 @@ else
 	CONF_DIR=$(XDG_CONFIG_DIR)/river
 endif
 install:
-	ln -s . $(CONF_DIR)
+	ln -s $(PWD) $(CONF_DIR)
 uninstall:
 	trash $(CONF_DIR)
