@@ -68,3 +68,6 @@ button {
   background-color: rgba(28, 70, 140, 0.4);
   padding: 3px;
 }
+#window {
+  padding: 0 20px;
+}

@@ -28,7 +28,7 @@
         "on-click": "activate"
     },
     "river/window": {
-        "max-length": 40
+        "max-length": 60
     },
     "idle_inhibitor": {
         "format": " {icon} ",
