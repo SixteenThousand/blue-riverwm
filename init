@@ -99,8 +99,8 @@ function tags_config {
 function navigation_config {
 	riverctl map normal Super W focus-view next
 	riverctl map normal Alt Tab focus-view next
-	riverctl map normal Super X focus-view prev
-	riverctl map normal Alt+Shift Tab focus-view prev
+	riverctl map normal Super X focus-view previous
+	riverctl map normal Alt+Shift Tab focus-view previous
 }
 
 function window_rules {
