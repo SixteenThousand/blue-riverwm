@@ -157,8 +157,8 @@ function panel_config {
 }
 
 function notification_config {
-	mako & disown
-	riverctl map normal Super N spawn 'makoctl dismiss --all'
+	dunst & disown
+	riverctl map normal Super N spawn 'dunstctl close-all'
 }
 
 function apps_config {
