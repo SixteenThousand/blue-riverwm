@@ -115,6 +115,7 @@ function layout_config {
 }
 
 function pretty_config {
+	riverctl xcursor_theme Breeze 36
 	riverctl border-color-focused 0x006600
 	riverctl border-color-unfocused 0x000066
 	rivertile -view-padding 0 -outer-padding 0 & disown
