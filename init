@@ -119,9 +119,7 @@ function pretty_config {
 	riverctl border-color-focused 0x006600
 	riverctl border-color-unfocused 0x000066
 	rivertile -view-padding 0 -outer-padding 0 & disown
-	swaybg --output eDP-1 \
-		--image $HOME/Pictures/Profile_Pics/mountain-climbing_img3.jpg \
-		& disown
+	[ -x "$HOME/.swaybg" ] && $HOME/.swaybg
 }
 
 function hardware_buttons_config {
