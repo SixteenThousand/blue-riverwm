@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 ENV_VARS_FILE=${XDG_CONFIG_HOME:-$HOME/.config}/river/actions/constants.sh
 LOG_FILE=$HOME/river.log
