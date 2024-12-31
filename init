@@ -25,15 +25,19 @@ function main {
 	pretty_config
 	layout_config
 	hardware_buttons_config
-	panel_config
-	notification_config
 	apps_config
 	scratchpad_config
 	resize_mode
 	
-	if ! pgrep whatsie
+	# reload config
+	riverctl map normal Control+Super R spawn \
+		"$CONFIG_DIR/init; notify-send River 'Config reloaded!'"
+	# autostart, but not on config reload
+	if ! pgrep river 2>&1 >/dev/null
 	then
-		flatpak run com.ktechpit.whatsie & disown
+		firefox https://web.whatsapp.com
+		panel_config
+		notification_config
 	fi
 }
 
