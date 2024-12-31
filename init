@@ -29,6 +29,7 @@ function main {
 	notification_config
 	apps_config
 	scratchpad_config
+	resize_mode
 	
 	if ! pgrep whatsie
 	then
@@ -175,6 +176,16 @@ function scratchpad_config {
 	riverctl map normal Super+Shift Minus set-view-tags $SCRATCH_TAGS
 	riverctl map normal Super Minus toggle-focused-tags $SCRATCH_TAGS
 			# "source $ENV_VARS_FILE && $CONFIG_DIR/actions/show-scratch"
+}
+
+function resize_mode {
+	riverctl declare-mode resize
+	riverctl map normal Super R enter-mode resize
+	riverctl map -repeat resize Super Escape enter-mode normal
+	riverctl map -repeat resize Super Left  resize horizontal -15
+	riverctl map -repeat resize Super Right resize horizontal +15
+	riverctl map -repeat resize Super Down  resize vertical -15
+	riverctl map -repeat resize Super Up    resize vertical +15
 }
 
 
