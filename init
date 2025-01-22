@@ -169,12 +169,10 @@ function notification_config {
 }
 
 function apps_config {
-	riverctl map normal Super G spawn 'alacritty -e clifm'
+	riverctl map normal Super G spawn 'gio launch $HOME/.local/share/applications/term-file-manager.desktop'
 	riverctl map normal Super A spawn 'rofi -show drun'
 	riverctl map normal Super B spawn 'firefox'
-	riverctl map normal Super Return spawn 'wezterm'
-	riverctl map normal Super+Shift Return spawn 'alacritty -e tmux'
-	riverctl map normal Super V spawn 'neovide'
+	riverctl map normal Super Return spawn $TERMINAL
 	riverctl map normal Super T spawn 'thunderbird'
 }
 
