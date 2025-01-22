@@ -39,6 +39,8 @@ function main {
 		panel_config
 		notification_config
 	fi
+	# idling
+	swayidle -w before-sleep 'swaylock -f -c 222255' & disown
 }
 
 function write_log {
@@ -114,6 +116,7 @@ function window_rules {
 
 function layout_config {
 	riverctl default-layout rivertile
+	riverctl send-layout-cmd rivertile 'main-ratio 0.5'
 	riverctl default-attach-mode bottom
 	riverctl map normal Super+Shift w swap next
 	riverctl map normal Super+Shift x swap previous
