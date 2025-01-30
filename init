@@ -33,12 +33,14 @@ function main {
 	riverctl map normal Control+Super R spawn \
 		"$CONFIG_DIR/init; notify-send River 'Config reloaded!'"
 	# autostart, but not on config reload
-	if ! pgrep river 2>&1 >/dev/null
+	if [ ! -f "$STATE_DIR/is-running" ]
 	then
-		firefox https://web.whatsapp.com
+		firefox https://web.whatsapp.com & disown
 		panel_config
 		notification_config
 	fi
+	touch "$STATE_DIR/is-running"
+	
 	# idling
 	swayidle -w before-sleep 'swaylock -f -c 222255' & disown
 }
