@@ -159,7 +159,7 @@ function panel_config {
 		waybar --config $PANEL_CONFIG/waybar.jsonc \
 			--style $PANEL_CONFIG/waybar.css & disown
 	fi
-	riverctl map normal Super+Shift F spawn \
+	riverctl map normal Super Escape spawn \
 		"source $ENV_VARS_FILE && $CONFIG_DIR/actions/toggle-panel"
 }
 
