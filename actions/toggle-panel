@@ -4,5 +4,5 @@ if pgrep waybar
 then
 	killall waybar
 else
-	waybar
+	waybar -c $CONFIG_DIR/panel/waybar.jsonc -s $CONFIG_DIR/panel/waybar.css
 fi

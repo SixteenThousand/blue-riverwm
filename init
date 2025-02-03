@@ -174,7 +174,7 @@ function apps_config {
 	riverctl map normal Super G spawn 'gio launch $HOME/.local/share/applications/term-file-manager.desktop'
 	riverctl map normal Super A spawn 'rofi -show drun'
 	riverctl map normal Super B spawn 'firefox'
-	riverctl map normal Super Return spawn $TERMINAL
+	riverctl map normal Super Return spawn "$TERMINAL"
 	riverctl map normal Super T spawn 'thunderbird'
 }
 
@@ -188,11 +188,11 @@ function scratchpad_config {
 function resize_mode {
 	riverctl declare-mode resize
 	riverctl map normal Super R enter-mode resize
-	riverctl map -repeat resize Super Escape enter-mode normal
-	riverctl map -repeat resize Super Left  resize horizontal -15
-	riverctl map -repeat resize Super Right resize horizontal +15
-	riverctl map -repeat resize Super Down  resize vertical -15
-	riverctl map -repeat resize Super Up    resize vertical +15
+	riverctl map -repeat resize Escape enter-mode normal
+	riverctl map -repeat resize Left  resize horizontal -15
+	riverctl map -repeat resize Right resize horizontal +15
+	riverctl map -repeat resize Down  resize vertical -15
+	riverctl map -repeat resize Up    resize vertical +15
 }
 
 
