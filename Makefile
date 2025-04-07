@@ -1,9 +1,10 @@
-ifeq ($(XDG_CONFIG_DIR),)
-	CONF_DIR=$(HOME)/.config/river
+ifeq (${XDG_CONFIG_DIR},)
+	CONF_DIR=${HOME}/.config/river
 else
-	CONF_DIR=$(XDG_CONFIG_DIR)/river
+	CONF_DIR=${XDG_CONFIG_DIR}/river
 endif
 install:
-	ln -s $(PWD) $(CONF_DIR)
+	mkdir -p $$(dirname ${CONF_DIR})
+	ln -s ${PWD} ${CONF_DIR}
 uninstall:
-	trash $(CONF_DIR)
+	rm -I ${CONF_DIR}
